@@ -18,9 +18,7 @@ const ProjectList = () => {
       .map((projet) => {
         return (
           <div>
-            <Link to={<Project key={projet.id} name={projet.name} />}>
-              project.name
-            </Link>
+            <Link to={`/projects/${project.id}`}>{project.name}</Link>
           </div>
         );
       });
@@ -28,12 +26,10 @@ const ProjectList = () => {
   const ProjectHackaton = () => {
     project
       .filter((projet) => projet.type === 'hackaton')
-      .map((projet) => {
+      .map((project) => {
         return (
           <div>
-            <Link to={<Project key={projet.id} name={projet.name} />}>
-              project.name
-            </Link>
+            <Link to={`/projects/${project.id}`}>{project.name}</Link>
           </div>
         );
       });
