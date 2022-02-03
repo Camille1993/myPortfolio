@@ -1,0 +1,50 @@
+.projectList {
+  padding-top: 50px;
+  width: auto;
+  background-color: #4b3434;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.cardProject {
+  height: 9em;
+  background-color: #ad340f;
+  width: 14em;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  padding-bottom: 10px;
+  box-shadow: 5px 4px lightgrey;
+  border-radius: 15px;
+  color: lightgrey;
+  text-decoration: none;
+}
+.listProject {
+  display: flex;
+  justify-content: space-evenly;
+}
+h2 {
+  font-family: 'Rock Salt', cursive;
+  font-size: 32px;
+  color: #cb4014;
+}
+h4 {
+  font-family: 'Rock Salt', cursive;
+  font-size: 20px;
+  color: #cb4014;
+}
+.goback {
+  padding-right: 50px;
+  text-decoration: none;
+  color: #cb4014;
+  align-self: end;
+}
+@media screen and (max-width: 450px) {
+  .listProject {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+}

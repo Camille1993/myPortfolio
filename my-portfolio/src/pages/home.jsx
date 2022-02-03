@@ -9,8 +9,8 @@ function Home() {
   return (
     <div className="home">
       <h1>My Portfolio</h1>
-      <Link to="/presentation">
-        <button type="button">Enter</button>
+      <Link to="/presentation" className="enter">
+        Enter
       </Link>
     </div>
   );
