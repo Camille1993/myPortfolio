@@ -6,13 +6,16 @@ import './project.css';
 
 function Project() {
   const [techno, setTechno] = useState([]);
-  const [projet, setProjet] = useState();
+  const [projet, setProjet] = useState({});
   const { projectid } = useParams();
 
   useEffect(() => {
     axios
       .get(`${process.env.REACT_APP_URL_BACK}/project/${projectid}`)
-      .then((res) => setProjet(res.data))
+      .then((res) => {
+        console.log(res.data[0]);
+        setProjet(res.data[0]);
+      })
       .catch((err) => console.error(err));
     axios
       .get(`${process.env.REACT_APP_URL_BACK}/project/${projectid}/techno`)
@@ -25,10 +28,9 @@ function Project() {
       <Link to="/projects" className="goback">
         go back
       </Link>
-      <h1>Hello</h1>
       <h2>{projet.name}</h2>
       <img
-        src={`../assets/pictures/${projet.name}.png`}
+        src={`../assets/${projet.name}.png`}
         alt={`${projet.name} home page`}
       />
       <div>
@@ -39,7 +41,7 @@ function Project() {
         <h4>Technologies utilisées</h4>
         <ul>
           {techno.map((technos) => (
-            <li>{technos.name}</li>
+            <li className="technoList">{technos.name}</li>
           ))}
         </ul>
       </div>

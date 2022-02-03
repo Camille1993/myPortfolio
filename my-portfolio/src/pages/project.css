@@ -1,6 +1,14 @@
+.project {
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+}
 .goback {
   padding-right: 50px;
   text-decoration: none;
   color: #cb4014;
   align-self: end;
+}
+.technoList {
+  list-style: none;
 }
