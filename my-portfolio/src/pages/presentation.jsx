@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Presentation = () => {
+function Presentation() {
   return (
     <div>
       <h2>Presentation</h2>
@@ -25,13 +25,13 @@ const Presentation = () => {
           Sed rutrum non turpis pulvinar rutrum. In sed augue libero.
         </p>
       </div>
-      <Link to="/ProjectList">
+      <Link to="/projects">
         <button type="button">Projects</button>
       </Link>
-      <Link to="/contactMe">
+      <Link to="/contact">
         <button type="button">contact Me</button>
       </Link>
     </div>
   );
-};
+}
 export default Presentation;

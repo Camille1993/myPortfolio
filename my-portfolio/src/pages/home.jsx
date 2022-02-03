@@ -1,8 +1,11 @@
 import React from 'react';
-/**import CSS */
+import { Link } from 'react-router-dom';
+/**
+ * import CSS
+ *  */
 import './home.css';
 
-const Home = () => {
+function Home() {
   return (
     <div className="home">
       <h1>My Portfolio</h1>
@@ -11,6 +14,6 @@ const Home = () => {
       </Link>
     </div>
   );
-};
+}
 
 export default Home;

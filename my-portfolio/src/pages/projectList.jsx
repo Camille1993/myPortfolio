@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-const ProjectList = () => {
+function ProjectList() {
   const [project, setProject] = useState([]);
 
   useEffect(() => {
     axios
-      .get(`${process.env.BACK_URL}/projects`)
+      .get(`${process.env.REACT_APP_URL_BACK}/projects`)
       .then((res) => setProject(res))
       .catch((err) => console.error(err));
   }, []);
@@ -18,7 +18,7 @@ const ProjectList = () => {
       .map((projet) => {
         return (
           <div>
-            <Link to={`/projects/${project.id}`}>{project.name}</Link>
+            <Link to={`/projects/${projet.id}`}>{projet.name}</Link>
           </div>
         );
       });
@@ -26,10 +26,10 @@ const ProjectList = () => {
   const ProjectHackaton = () => {
     project
       .filter((projet) => projet.type === 'hackaton')
-      .map((project) => {
+      .map((projet) => {
         return (
           <div>
-            <Link to={`/projects/${project.id}`}>{project.name}</Link>
+            <Link to={`/projects/${projet.id}`}>{projet.name}</Link>
           </div>
         );
       });
@@ -47,6 +47,6 @@ const ProjectList = () => {
       </div>
     </div>
   );
-};
+}
 
 export default ProjectList;
