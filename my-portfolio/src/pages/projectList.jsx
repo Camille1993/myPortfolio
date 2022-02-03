@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
+import './projectList.css';
+
 function ProjectList() {
   const [project, setProject] = useState([{}]);
 
@@ -26,22 +28,27 @@ function ProjectList() {
         return (
           <div key={projet.id}>
             <Link to={`/projects/${projet.id}`}>
-              <button type="button">{projet.name}</button>
+              <div type="button" className="cardProject">
+                {projet.name}
+              </div>
             </Link>
           </div>
         );
       });
   };
   return (
-    <div>
+    <div className="projectList">
+      <Link to="/presentation" className="goback">
+        go back
+      </Link>
       <h2>Projects</h2>
       <div>
         <h4>Project Wild Code School</h4>
-        {Project('informatique')}
+        <div className="listProject">{Project('informatique')}</div>
       </div>
       <div>
         <h4>Hackathon</h4>
-        {Project('hackaton')}
+        <div className="listProject">{Project('hackaton')}</div>
       </div>
     </div>
   );

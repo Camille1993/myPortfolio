@@ -1,0 +1,29 @@
+.presentation {
+  padding-top: 50px;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+}
+.goback {
+  padding-right: 50px;
+  text-decoration: none;
+  color: #cb4014;
+  align-self: end;
+}
+.presentationText {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  text-align: justify;
+  padding-left: 25%;
+}
+.direction {
+  display: flex;
+  justify-content: space-evenly;
+}
+.subdirection {
+  text-decoration: none;
+  color: #cb4014;
+  font-family: 'Rock Salt', cursive;
+  font-size: 16px;
+}

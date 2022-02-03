@@ -1,11 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import './presentation.css';
+
 function Presentation() {
   return (
-    <div>
+    <div className="presentation">
+      <Link to="/" className="goback">
+        go back
+      </Link>
       <h2>Presentation</h2>
-      <div>
+      <div className="presentationText">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at est at
           nisl porta ullamcorper eu non purus. Cras porttitor hendrerit quam, ut
@@ -25,12 +30,14 @@ function Presentation() {
           Sed rutrum non turpis pulvinar rutrum. In sed augue libero.
         </p>
       </div>
-      <Link to="/projects">
-        <button type="button">Projects</button>
-      </Link>
-      <Link to="/contact">
-        <button type="button">contact Me</button>
-      </Link>
+      <div className="direction">
+        <Link to="/projects" className="subdirection">
+          Projects
+        </Link>
+        <Link to="/contact" className="subdirection">
+          contact Me
+        </Link>
+      </div>
     </div>
   );
 }
