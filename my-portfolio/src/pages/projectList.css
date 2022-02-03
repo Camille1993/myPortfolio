@@ -39,12 +39,15 @@ h4 {
   color: #cb4014;
   align-self: end;
 }
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 700px) {
   .listProject {
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
     align-items: center;
     gap: 15px;
+  }
+  .projectList {
+    height: max-content;
   }
 }

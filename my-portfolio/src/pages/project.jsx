@@ -1,28 +1,42 @@
 import React, { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 
-function Project({ project }) {
+import './project.css';
+
+function Project() {
   const [techno, setTechno] = useState([]);
+  const [projet, setProjet] = useState();
+  const { projectid } = useParams();
 
   useEffect(() => {
     axios
-      .get(`${process.env.REACT_APP_URL_BACK}/project/${project.id}/techno`)
-      .then((res) => setTechno(res))
+      .get(`${process.env.REACT_APP_URL_BACK}/project/${projectid}`)
+      .then((res) => setProjet(res.data))
+      .catch((err) => console.error(err));
+    axios
+      .get(`${process.env.REACT_APP_URL_BACK}/project/${projectid}/techno`)
+      .then((res) => setTechno(res.data))
       .catch((err) => console.error(err));
   }, []);
+
   return (
-    <div>
-      <h2>{project.name}</h2>
+    <div className="project">
+      <Link to="/projects" className="goback">
+        go back
+      </Link>
+      <h1>Hello</h1>
+      <h2>{projet.name}</h2>
       <img
-        src={`../assets/pictures/${project.name}.jpg`}
-        alt={`${project.name} home page`}
+        src={`../assets/pictures/${projet.name}.png`}
+        alt={`${projet.name} home page`}
       />
       <div>
-        <h5>Description</h5>
-        <p>{project.description}</p>
+        <h4>Description</h4>
+        <p>{projet.description}</p>
       </div>
       <div>
-        <h5>Technologies utilisées</h5>
+        <h4>Technologies utilisées</h4>
         <ul>
           {techno.map((technos) => (
             <li>{technos.name}</li>

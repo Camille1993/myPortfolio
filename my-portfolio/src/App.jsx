@@ -19,10 +19,10 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/presentation" element={<Presentation />} />
-        <Route path="/projects" element={<ProjectList />}>
-          <Route path=":projectId" element={<Project />} />
-        </Route>
+        <Route path="/projects" element={<ProjectList />} />
+        <Route path="/projects/:projectid" component={<Project />} />
         <Route path="/contact" element={<ContactMe />} />
+        {/* <Route exact path="*" element={<NotFound />}/> */}
       </Routes>
     </div>
   );
